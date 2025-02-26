@@ -1,0 +1,61 @@
+quarkus:
+    devservices:
+        enabled: false
+    micrometer:
+        export:
+            prometheus:
+                enabled: false
+    otel:
+        exporter:
+            otlp:
+                enabled: false
+    log:
+        category:
+            "com.bmc.anvil.catalog.infrastructure.logging":
+                level: DEBUG  # IDE does not recognize this key, ignore warning
+        console:
+            format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p (%t) [%c{3.}] %s%e %n "
+            # BMC JSON Config -> start
+            json:
+                enable: true
+                pretty-print: true
+                print-details: false
+                log-date-time-format: "yyyy-MM-dd HH:mm:ss,SSS"
+#                record-delimiter: ","
+#                log-zone-id: +05:00
+                log-format: default
+                excluded-keys:
+                    - sequence
+                    - loggerClassName
+                    - threadId
+                    - hostname
+                    - processName
+                    - processId
+                    - ndc
+                client-serializers:
+                    local-date-time-format: "'[local]'yyyy-MM-dd'T'HH:mm:ss.SSS"
+                    zoned-date-time-format: "'[zoned]'yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                    instant-format: "'[instant]'yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                    local-date-format: "'[date]'yyyy-MM-dd EEEE"
+                    local-time-format: "'[time]'HH:mm:ss.SSS B"
+                    custom-serializers:
+                        "id": "com.bmc.anvil.catalog.infrastructure.config.serializer.IdJsonSerializer"
+                # these will appear at the top most level of the log
+                #                additional-fields-top:
+                #                    foo: BAR
+                #                    fooo: bar
+                #                # these will appear wrapped inside a field called "additionalFields"
+                # support for placeholders and variables is provided by the rest of the framework
+#                additional-fields-wrapped:
+#                    java-runtime: ${java.runtime.name}
+#                    os-data: ${os.name} | ${os.arch} | ${os.version}
+                key-overrides:
+                    message: "MeSsAgE"
+                    level: "L_V_L"
+                    hostname: "HOST"
+            # BMC JSON Config <- end
+        file:
+            enable: false
+            json:
+                enable: true
+                pretty-print: false
