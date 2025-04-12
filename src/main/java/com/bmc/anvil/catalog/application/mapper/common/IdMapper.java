@@ -18,18 +18,22 @@ import lombok.NonNull;
 public interface IdMapper {
 
     default Id fromString(final String id) {
+
         return Id.from(id);
     }
 
     default Id fromUUID(final UUID id) {
+
         return Id.from(id);
     }
 
     default String toString(@NonNull final Id id) {
+
         return id.getIdAsString();
     }
 
     default UUID toUUID(@NonNull final Id id) {
+
         return id.getId();
     }
 

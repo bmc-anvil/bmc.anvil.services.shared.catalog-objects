@@ -17,6 +17,7 @@ public class Color {
     private String rgbValue;
 
     public Color(final String hexValue, final String rgbValue) {
+
         if (hexValue != null) {
             this.hexValue = hexValue;
         } else if (rgbValue != null) {
@@ -27,22 +28,27 @@ public class Color {
     }
 
     public Color() {
+
         this.hexValue = DEFAULT_HEX_VALUE;
     }
 
     public String getHexValue() {
+
         return hexValue != null ? hexValue : convertRgbToHex();
     }
 
     public String getRgbValue() {
+
         return rgbValue != null ? hexValue : convertHexToRbg();
     }
 
     private String convertHexToRbg() {
+
         return null;
     }
 
     private String convertRgbToHex() {
+
         return null;
     }
 

@@ -25,6 +25,7 @@ public abstract class SpecificationBase<T> {
      * @return The exception message indicating that the candidate failed the specification.
      */
     protected String getExceptionMessage(final T input) {
+
         {
             return "Candidate [%s] does not satisfy the specification.".formatted(input);
         }
@@ -38,9 +39,11 @@ public abstract class SpecificationBase<T> {
      * @return A new specification representing the combination.
      */
     public SpecificationBase<T> and(SpecificationBase<T> other) {
+
         return new SpecificationBase<>() {
             @Override
             protected Predicate<T> getValidationRule() {
+
                 return SpecificationBase.this.getValidationRule().and(other.getValidationRule());
             }
         };
@@ -56,6 +59,7 @@ public abstract class SpecificationBase<T> {
      * @throws IllegalArgumentException if it fails
      */
     public boolean isSatisfiedBy(T input) throws IllegalArgumentException {
+
         if (!getValidationRule().test(input)) {
             throw new IllegalArgumentException(getExceptionMessage(input));
         }
@@ -69,9 +73,11 @@ public abstract class SpecificationBase<T> {
      * @return A new specification representing the negation of this specification.
      */
     public SpecificationBase<T> not() {
+
         return new SpecificationBase<>() {
             @Override
             protected Predicate<T> getValidationRule() {
+
                 return SpecificationBase.this.getValidationRule().negate();
             }
         };
@@ -85,9 +91,11 @@ public abstract class SpecificationBase<T> {
      * @return A new specification representing the combination.
      */
     public SpecificationBase<T> or(SpecificationBase<T> other) {
+
         return new SpecificationBase<>() {
             @Override
             protected Predicate<T> getValidationRule() {
+
                 return SpecificationBase.this.getValidationRule().or(other.getValidationRule());
             }
         };

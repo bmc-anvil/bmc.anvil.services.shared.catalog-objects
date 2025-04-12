@@ -37,10 +37,12 @@ public class Catalog {
     private       Map<String, String> properties;
 
     public Catalog(final Id id) {
+
         this.id = id;
     }
 
     public Catalog() {
+
         this(Id.create());
     }
 

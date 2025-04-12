@@ -23,10 +23,12 @@ public class LogHandler {
     private final boolean jsonLoggingEnabled;
 
     public LogHandler(@ConfigProperty(name = "quarkus.log.console.json", defaultValue = "false") final boolean jsonLoggingEnabled) {
+
         this.jsonLoggingEnabled = jsonLoggingEnabled;
     }
 
     public void log(final Logger logger, final LogLevel logLevel, final LogContent logContent) {
+
         final Object       formattedMessage = format(logContent);
         final List<Object> parameters       = new ArrayList<>();
 
@@ -48,6 +50,7 @@ public class LogHandler {
     }
 
     private Object format(LogContent logContent) {
+
         return jsonLoggingEnabled ? Map.of(METHOD_CALL, logContent)
                                   : "method: [%s] parameter(s):(%s)".formatted(logContent.getMethodCalled(), logContent.getMethodParameters());
     }

@@ -25,7 +25,18 @@ public final class Id {
     private final UUID id;
 
     private Id(final UUID id) {
+
         this.id = id;
+    }
+
+    /**
+     * Returns the string representation of the unique identifier).
+     *
+     * @return the unique identifier as a string.
+     */
+    public String getIdAsString() {
+
+        return id.toString();
     }
 
     /**
@@ -34,6 +45,7 @@ public final class Id {
      * @return A new {@link Id} instance with a unique identifier.
      */
     public static Id create() {
+
         return new Id(randomUUID());
     }
 
@@ -45,6 +57,7 @@ public final class Id {
      * @return a new {@link Id} instance containing the specified UUID.
      */
     public static Id from(@NonNull final UUID value) {
+
         return new Id(value);
     }
 
@@ -59,20 +72,12 @@ public final class Id {
      * @throws IllegalArgumentException If the given value cannot be parsed into a UUID.
      */
     public static Id from(@NonNull final String value) throws IllegalArgumentException {
+
         try {
             return new Id(fromString(value));
         } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException("Invalid UUID string: " + value, e);
         }
-    }
-
-    /**
-     * Returns the string representation of the unique identifier).
-     *
-     * @return the unique identifier as a string.
-     */
-    public String getIdAsString() {
-        return id.toString();
     }
 
 }

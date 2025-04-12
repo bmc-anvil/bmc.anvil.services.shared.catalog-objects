@@ -16,10 +16,12 @@ public class SerializerUtils {
     private SerializerUtils() {}
 
     public static boolean isAssignableFromBean(final Class<?> aClass, final BeanDescription beanDescription) {
+
         return aClass.isAssignableFrom(beanDescription.getBeanClass());
     }
 
     public static List<BeanPropertyWriter> removeItemsFromWriters(final List<String> itemsToRemove, final List<BeanPropertyWriter> writers) {
+
         for (String valueToRemove : itemsToRemove) {
             writers.removeIf(writer -> writer.getName().equals(valueToRemove));
         }

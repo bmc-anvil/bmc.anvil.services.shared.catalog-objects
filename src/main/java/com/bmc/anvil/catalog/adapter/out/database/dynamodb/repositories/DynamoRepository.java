@@ -9,11 +9,11 @@ package com.bmc.anvil.catalog.adapter.out.database.dynamodb.repositories;
 public class DynamoRepository<T> {
 
     /*
-    * this one has to have the equivalent of:
-    * - sessionManager or similar...
-    *       - maybe the client is init somewhere else, and here we inject the actual tables "à la panache"
-    * - having the basics for save delete etc
-    * -
-    * */
+     * this one has to have the equivalent of:
+     * - sessionManager or similar...
+     *       - maybe the client is init somewhere else, and here we inject the actual tables "à la panache"
+     * - having the basics for save delete etc
+     * -
+     * */
 
 }

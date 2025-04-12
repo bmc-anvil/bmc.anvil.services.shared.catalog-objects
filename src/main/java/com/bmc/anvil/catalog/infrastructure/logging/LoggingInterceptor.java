@@ -36,6 +36,7 @@ public class LoggingInterceptor {
 
     @AroundInvoke
     public Object logMethodCall(final InvocationContext context) throws Exception {
+
         if (avoidInterceptionDetected(context)) {
             Log.warn("Self Interception detected: safely returning to the invocation chain");
             return proceedInvocation(context);
@@ -46,12 +47,14 @@ public class LoggingInterceptor {
     }
 
     private boolean avoidInterceptionDetected(final InvocationContext context) {
+
         final Predicate<String> isSelfInvocation = className -> className.contains(this.getClass().getPackageName());
 
         return isSelfInvocation.or(ignore -> isNull(context.getTarget())).test(context.getMethod().getDeclaringClass().getPackageName());
     }
 
     private void logMessage(final InvocationContext context) {
+
         final LogContent logContent = logContentFactory.fromContext(context);
 
         Log.infof("%s", Map.of("intercepted", logContent));
@@ -59,6 +62,7 @@ public class LoggingInterceptor {
     }
 
     private Object proceedInvocation(final InvocationContext context) throws Exception {
+
         try {
             return context.proceed();
         } catch (Exception e) {

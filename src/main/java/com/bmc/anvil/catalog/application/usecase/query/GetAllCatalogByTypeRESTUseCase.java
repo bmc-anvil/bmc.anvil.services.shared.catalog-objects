@@ -11,7 +11,6 @@ import com.bmc.anvil.catalog.application.ports.out.CatalogOutputPort;
 import com.bmc.anvil.catalog.domain.model.CatalogType;
 import com.bmc.anvil.catalog.infrastructure.logging.Logged;
 
-import io.quarkus.logging.Log;
 import io.smallrye.mutiny.Uni;
 
 import lombok.RequiredArgsConstructor;
@@ -32,6 +31,7 @@ public class GetAllCatalogByTypeRESTUseCase implements GetAllCatalogByTypeRESTIn
 
     @Override
     public Uni<List<CatalogResponseDTO>> execute(final CatalogType catalogType) {
+
         return outputPort.getAllByType(catalogType)
                          .map(catalogs -> catalogs.stream().map(restMapper::toResponseDto).toList());
     }

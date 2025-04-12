@@ -31,6 +31,7 @@ public class CreateCatalogRESTUseCase implements CreateCatalogRESTInputPort {
 
     @Override
     public Uni<CatalogResponseDTO> execute(final CatalogCreateDTO createCatalogDTO) {
+
         return createFrom().item(createCatalogDTO)
                            .map(restMapper::fromCreateDto)
                            .chain(outputPort::save)

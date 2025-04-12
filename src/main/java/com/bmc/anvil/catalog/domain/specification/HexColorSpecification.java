@@ -62,11 +62,13 @@ public class HexColorSpecification extends SpecificationBase<String> {
 
     @Override
     protected Predicate<String> getValidationRule() {
+
         return HEX_COLOR_VALIDATOR;
     }
 
     @Override
     protected String getExceptionMessage(final String input) {
+
         return "Color with hex value: [%s] does not match the expected format: [ %s ]".formatted(input, HEX_COLOR_FORMAT_REGEX);
     }
 

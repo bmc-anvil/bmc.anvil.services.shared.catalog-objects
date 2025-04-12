@@ -10,6 +10,7 @@ import com.bmc.anvil.catalog.application.ports.in.GetAllCatalogByTypeRESTInputPo
 import com.bmc.anvil.catalog.domain.model.CatalogType;
 import com.bmc.anvil.catalog.infrastructure.logging.Logged;
 
+import io.quarkus.logging.Log;
 import io.smallrye.mutiny.Uni;
 
 import org.jboss.resteasy.reactive.server.ServerExceptionMapper;
@@ -36,6 +37,7 @@ public class CatalogController {
 
     @POST
     public Uni<Response> create(final CatalogCreateDTO createCatalogDTO) {
+
         return createCatalogInputPort.execute(createCatalogDTO)
                                      .map(responseDto -> ok(responseDto).build());
     }
@@ -43,12 +45,25 @@ public class CatalogController {
     @GET
     @Path("/{catalogType}")
     public Uni<Response> getAllForType(final @PathParam("catalogType") CatalogType catalogType) {
+
         return getAllForTypeInputPort.execute(catalogType)
                                      .map(responseDto -> ok(responseDto).build());
     }
 
+    @ServerExceptionMapper(Exception.class)
+    public Response handleIllegalArgumentException(Exception e) {
+
+        Log.error("error BAD REQUEST", e);
+        e.printStackTrace();
+        return Response.status(Response.Status.BAD_REQUEST)
+                       .entity(e.getMessage())
+                       .build();
+    }
+
     @ServerExceptionMapper(IllegalArgumentException.class)
     public Response handleIllegalArgumentException(IllegalArgumentException e) {
+
+        Log.error("error BAD REQUEST", e);
         return Response.status(Response.Status.BAD_REQUEST)
                        .entity(e.getMessage())
                        .build();
@@ -56,6 +71,8 @@ public class CatalogController {
 
     @ServerExceptionMapper(NotFoundException.class)
     public Response handleNotFoundException(NotFoundException e, Request request) {
+
+        Log.error("error BAD REQUEST", e);
 
         return Response.status(Response.Status.BAD_REQUEST)
                        .entity(e.getCause()

@@ -24,14 +24,17 @@ public class LogUtils {
     public static        Function<InvocationContext, String> extractFullClassName  = LoggingFunction.logFunction(extractFullClassName0);
 
     public static String extractFullClassNamef(final InvocationContext context) {
+
         return context.getMethod().getDeclaringClass().getName();
     }
 
-   public static String extractMethodName(final InvocationContext context) {
+    public static String extractMethodName(final InvocationContext context) {
+
         return context.getMethod().getName();
     }
 
     public static String extractSimpleClassName(final InvocationContext context) {
+
         return context.getMethod().getDeclaringClass().getSimpleName();
     }
 
@@ -47,6 +50,7 @@ public class LogUtils {
      * @return the {@link LogLevel} defined in the {@link Logged} annotation; defaults to {@link LogLevel#INFO} if absent.
      */
     public static LogLevel getLogLevelFromAnnotation(final InvocationContext context) {
+
         return ofNullable(context.getMethod().getAnnotation(Logged.class))
                 .or(() -> ofNullable(context.getMethod().getDeclaringClass().getAnnotation(Logged.class)))
                 .map(Logged::value)

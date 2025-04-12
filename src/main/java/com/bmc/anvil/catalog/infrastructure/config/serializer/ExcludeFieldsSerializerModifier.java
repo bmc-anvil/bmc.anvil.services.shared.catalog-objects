@@ -30,10 +30,12 @@ public class ExcludeFieldsSerializerModifier extends BeanSerializerModifier {
     }
 
     private boolean doNotRequireAnyUpdate(final BeanDescription beanDescription) {
+
         return isAssignableFromBean(Catalog.class, beanDescription);
     }
 
     private List<BeanPropertyWriter> filteredProperties(final List<BeanPropertyWriter> beanProperties) {
+
         return removeItemsFromWriters(catalogFieldsToRemove, beanProperties);
     }
 

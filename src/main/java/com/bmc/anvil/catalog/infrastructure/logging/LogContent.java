@@ -23,4 +23,5 @@ public class LogContent {
     private String   classSimpleName;
     private String   methodCalled;
     private Object[] methodParameters;
+
 }

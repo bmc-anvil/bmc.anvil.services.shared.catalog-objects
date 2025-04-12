@@ -23,6 +23,7 @@ public class CreationTimes {
     private LocalDateTime lastUpdatedOn;
 
     public void init() {
+
         LocalDateTime now = now();
         createdOn     = now;
         lastUpdatedOn = now;

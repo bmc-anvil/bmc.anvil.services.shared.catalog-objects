@@ -3,8 +3,6 @@ package com.bmc.anvil.catalog.infrastructure.logging;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.interceptor.InvocationContext;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import static com.bmc.anvil.catalog.infrastructure.logging.utils.LogUtils.*;
 
 /**
@@ -17,6 +15,7 @@ import static com.bmc.anvil.catalog.infrastructure.logging.utils.LogUtils.*;
 public class LogContentFactory {
 
     public LogContent fromContext(final InvocationContext context) {
+
         return LogContent.builder()
                          .classFullName(extractFullClassName.apply(context))
                          .classSimpleName(extractSimpleClassName(context))

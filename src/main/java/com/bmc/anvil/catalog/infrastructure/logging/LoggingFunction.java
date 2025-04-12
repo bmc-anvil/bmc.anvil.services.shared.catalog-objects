@@ -15,20 +15,23 @@ public class LoggingFunction<T, R> implements Function<T, R> {
     private final Function<T, R> wrappedFunction;
 
     public LoggingFunction(final Function<T, R> wrappedFunction) {
-        this.wrappedFunction = wrappedFunction;
-    }
 
-    public static <T, R> Function<T, R> logFunction(final Function<T, R> function) {
-        return new LoggingFunction<>(function);
+        this.wrappedFunction = wrappedFunction;
     }
 
     @Override
     public R apply(final T t) {
+
         Log.debug("Calling Function.apply() with input: " + t);
         R result = wrappedFunction.apply(t);
         Log.debug("Function.apply() returned: " + result);
         return result;
 
+    }
+
+    public static <T, R> Function<T, R> logFunction(final Function<T, R> function) {
+
+        return new LoggingFunction<>(function);
     }
 
 }

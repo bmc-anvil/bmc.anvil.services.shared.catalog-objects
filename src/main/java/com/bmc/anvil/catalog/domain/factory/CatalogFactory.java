@@ -13,6 +13,7 @@ import io.smallrye.mutiny.Uni;
 public class CatalogFactory {
 
     public <T extends Catalog> Uni<T> createFromDto(String catalogType, Object dto) {
+
         return null;
     }
 

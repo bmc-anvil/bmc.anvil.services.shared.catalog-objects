@@ -1,7 +1,5 @@
 package com.bmc.anvil.catalog.application.mapper.common;
 
-import com.bmc.anvil.catalog.domain.model.valueobject.Ownership;
-
 import org.mapstruct.Mapper;
 
 /**
@@ -13,6 +11,6 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "jakarta", uses = {IdMapper.class})
 public interface OwnershipDbMapper {
 
-//    Ownership fromDynamo(OwnershipDynamo ownershipDynamo);
+    //    Ownership fromDynamo(OwnershipDynamo ownershipDynamo);
 
 }

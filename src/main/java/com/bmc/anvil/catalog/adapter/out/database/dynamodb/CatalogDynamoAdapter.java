@@ -23,17 +23,20 @@ public class CatalogDynamoAdapter implements CatalogOutputPort {
 
     @Override
     public Uni<Catalog> delete(final Catalog catalog) {
+
         return null;
     }
 
     @Override
     public Uni<List<Catalog>> getAllByType(final CatalogType catalogType) {
+
         List<Catalog> randomList = List.of(new Catalog(), new Catalog(), new Catalog());
         return Uni.createFrom().item(randomList);
     }
 
     @Override
     public Uni<Catalog> getOne(final Catalog catalog) {
+
         return null;
     }
 
@@ -45,6 +48,7 @@ public class CatalogDynamoAdapter implements CatalogOutputPort {
 
     @Override
     public Uni<Catalog> update(final Catalog catalog) {
+
         return null;
     }
 

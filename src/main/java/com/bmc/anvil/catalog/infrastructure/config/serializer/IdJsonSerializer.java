@@ -17,6 +17,7 @@ public class IdJsonSerializer extends JsonSerializer<Id> {
 
     @Override
     public void serialize(final Id value, final JsonGenerator gen, final SerializerProvider serializers) throws IOException {
+
         gen.writeString(value.getIdAsString());
     }
 
