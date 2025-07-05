@@ -45,7 +45,6 @@ public class CatalogController {
     @GET
     @Path("/{catalogType}")
     public Uni<Response> getAllForType(final @PathParam("catalogType") CatalogType catalogType) {
-
         return getAllForTypeInputPort.execute(catalogType)
                                      .map(responseDto -> ok(responseDto).build());
     }

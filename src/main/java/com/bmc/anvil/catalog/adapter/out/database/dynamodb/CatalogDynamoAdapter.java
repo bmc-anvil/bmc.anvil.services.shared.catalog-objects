@@ -30,7 +30,7 @@ public class CatalogDynamoAdapter implements CatalogOutputPort {
     @Override
     public Uni<List<Catalog>> getAllByType(final CatalogType catalogType) {
 
-        List<Catalog> randomList = List.of(new Catalog(), new Catalog(), new Catalog());
+        final List<Catalog> randomList = List.of(new Catalog(), new Catalog(), new Catalog());
         return Uni.createFrom().item(randomList);
     }
 
