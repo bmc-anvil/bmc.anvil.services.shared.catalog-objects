@@ -4,33 +4,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.bmc.platform</groupId>
-        <artifactId>bmc-bom</artifactId>
-        <version>0.6.0-experimental</version>
+        <groupId>bmc.dev.templates.maven</groupId>
+        <artifactId>quarkus-parent</artifactId>
+        <version>1.0.0</version>
     </parent>
 
     <groupId>com.bmc.anvil</groupId>
     <artifactId>catalog-objects</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-local</version>
 
     <name>BMC Anvil Catalog Objects</name>
     <description>Service to handle "general description" shared objects</description>
     <url>https://github.com/bmc-anvil/bmc-catalog-objects</url>
 
-    <repositories>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/bmc-anvil/*</url>
-        </repository>
-    </repositories>
-
     <dependencies>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5</artifactId>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>io.quarkiverse.amazonservices</groupId>
             <artifactId>quarkus-amazon-dynamodb-enhanced</artifactId>
@@ -47,17 +34,5 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-fault-tolerance</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-smallrye-health</artifactId>
-        </dependency>
-
-        <!-- BMC  libraries -->
-        <dependency>
-            <groupId>com.bmc.extensions</groupId>
-            <artifactId>bmc-logging-json</artifactId>
-            <version>0.0.1-local</version>
-        </dependency>
     </dependencies>
-
 </project>
