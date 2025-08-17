@@ -24,4 +24,7 @@ jobs:
             contents: read
             packages: write
             security-events: write
-
+        with:
+            tag_or_hash: ${{ inputs.tag_or_hash }}
+            deploy_package: false
+            checkstyle_skip: false
