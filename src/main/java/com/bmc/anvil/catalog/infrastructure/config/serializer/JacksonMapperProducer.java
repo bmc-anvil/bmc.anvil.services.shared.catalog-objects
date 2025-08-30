@@ -3,7 +3,7 @@ package com.bmc.anvil.catalog.infrastructure.config.serializer;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Singleton;
 
-import com.bmc.anvil.catalog.domain.model.valueobject.Id;
+import com.bmc.anvil.catalog.domain.models.valueobjects.Id;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 

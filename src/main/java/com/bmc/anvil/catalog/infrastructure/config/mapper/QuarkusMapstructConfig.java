@@ -1,8 +1,8 @@
 package com.bmc.anvil.catalog.infrastructure.config.mapper;
 
-import com.bmc.anvil.catalog.application.dto.request.CatalogCreateDTO;
-import com.bmc.anvil.catalog.application.mapper.common.IdMapper;
-import com.bmc.anvil.catalog.domain.model.entity.Catalog;
+import com.bmc.anvil.catalog.adapters.in.rest.dtos.requests.CatalogCreateDTO;
+import com.bmc.anvil.catalog.adapters.in.rest.mappers.common.IdMapper;
+import com.bmc.anvil.catalog.domain.models.entities.Catalog;
 
 import org.mapstruct.MapperConfig;
 import org.mapstruct.Mapping;

@@ -2,7 +2,7 @@ package com.bmc.anvil.catalog.infrastructure.config.serializer;
 
 import java.util.List;
 
-import com.bmc.anvil.catalog.domain.model.entity.Catalog;
+import com.bmc.anvil.catalog.domain.models.entities.Catalog;
 import com.fasterxml.jackson.databind.BeanDescription;
 import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;

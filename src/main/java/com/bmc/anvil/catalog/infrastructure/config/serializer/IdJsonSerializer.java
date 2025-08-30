@@ -2,7 +2,7 @@ package com.bmc.anvil.catalog.infrastructure.config.serializer;
 
 import java.io.IOException;
 
-import com.bmc.anvil.catalog.domain.model.valueobject.Id;
+import com.bmc.anvil.catalog.domain.models.valueobjects.Id;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;

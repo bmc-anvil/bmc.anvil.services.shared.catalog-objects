@@ -6,9 +6,7 @@ quarkus:
             prometheus:
                 enabled: false
     otel:
-        exporter:
-            otlp:
-                enabled: false
+        enabled: false
     log:
         category:
             "com.bmc.anvil.catalog.infrastructure.logging":

@@ -2,8 +2,8 @@ package com.bmc.anvil.catalog.application.ports.out;
 
 import java.util.List;
 
-import com.bmc.anvil.catalog.domain.model.CatalogType;
-import com.bmc.anvil.catalog.domain.model.entity.Catalog;
+import com.bmc.anvil.catalog.domain.models.CatalogType;
+import com.bmc.anvil.catalog.domain.models.entities.Catalog;
 
 import io.smallrye.mutiny.Uni;
 

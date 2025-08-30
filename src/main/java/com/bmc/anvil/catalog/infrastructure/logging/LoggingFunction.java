@@ -19,6 +19,11 @@ public class LoggingFunction<T, R> implements Function<T, R> {
         this.wrappedFunction = wrappedFunction;
     }
 
+    public static <T, R> Function<T, R> logFunction(final Function<T, R> function) {
+
+        return new LoggingFunction<>(function);
+    }
+
     @Override
     public R apply(final T t) {
 
@@ -27,11 +32,6 @@ public class LoggingFunction<T, R> implements Function<T, R> {
         Log.debug("Function.apply() returned: " + result);
         return result;
 
-    }
-
-    public static <T, R> Function<T, R> logFunction(final Function<T, R> function) {
-
-        return new LoggingFunction<>(function);
     }
 
 }
