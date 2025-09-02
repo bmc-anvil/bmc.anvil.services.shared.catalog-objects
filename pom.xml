@@ -11,7 +11,7 @@
 
     <groupId>com.bmc.anvil</groupId>
     <artifactId>catalog-objects</artifactId>
-    <version>0.0.1-local</version>
+    <version>bmc-local</version>
 
     <name>BMC Anvil Catalog Objects</name>
     <description>Service to handle "general description" shared objects</description>

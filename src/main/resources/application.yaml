@@ -10,7 +10,7 @@ quarkus:
     log:
         category:
             "com.bmc.anvil.catalog.infrastructure.logging":
-                level: DEBUG  # IDE does not recognize this key, ignore warning
+                level: info  # IDE does not recognize this key, ignore warning
         console:
             format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p (%t) [%c{3.}] %s%e %n "
             # BMC JSON Config -> start
@@ -21,7 +21,7 @@ quarkus:
                 log-date-time-format: "yyyy-MM-dd HH:mm:ss,SSS"
                 #                record-delimiter: ","
                 #                log-zone-id: +05:00
-                log-format: ecs
+                log-format: default
                 excluded-keys:
                     - sequence
                     - loggerClassName
