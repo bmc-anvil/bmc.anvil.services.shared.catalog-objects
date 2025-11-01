@@ -6,7 +6,7 @@
     <parent>
         <groupId>bmc.dev.templates.maven</groupId>
         <artifactId>bmc-quarkus-parent-services</artifactId>
-        <version>316be35</version>
+        <version>0.1.0</version>
     </parent>
 
     <groupId>com.bmc.anvil</groupId>
